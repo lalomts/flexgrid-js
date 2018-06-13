@@ -8,6 +8,8 @@ const styles = (settings) => {
 
 	const combinedSettings = Object.assign(defaultSettings, settings)
 
+	console.log(combinedSettings)
+
 	const { gutterWidth, outerMargin, xs, sm, md, lg, xl } = combinedSettings 
 
 	const halfGutter = gutterWidth * 0.5
@@ -18,8 +20,12 @@ const styles = (settings) => {
 
 	return ({
 
-		'container': {
-			// backgroundColor: 'red',
+		containerFluid: {
+			paddingRight: gutterWidth,
+  		paddingLeft: gutterWidth
+		},
+
+		container: {
 			boxSizing: 'border-box',
 		  marginLeft: 'auto',
 		  marginRight: 'auto',
@@ -27,7 +33,6 @@ const styles = (settings) => {
 		  paddingLeft: outerMargin,
 
 		  '& .row': {
-		  	// backgroundColor: 'blue',
 			  boxSizing: 'border-box',
 			  display: 'flex',
 			  flex: '0 1 auto',
@@ -225,7 +230,7 @@ const styles = (settings) => {
 		// Small Viewport 
 		[ viewport(sm) ]: {
 
-			width: `${sm - gutterWidth}`,
+			width: `${sm - gutterWidth}px`,
     	maxWidth: '100%',
 
 			container: {
@@ -402,7 +407,7 @@ const styles = (settings) => {
 
 			container: {
 
-				width: `${md - gutterWidth}`,
+				width: `${md - gutterWidth}px`,
     		maxWidth: '100%',
 
 				'& .col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-offset-0, .col-md-offset-1, .col-md-offset-2, .col-md-offset-3, .col-md-offset-4, .col-md-offset-5, .col-md-offset-6, .col-md-offset-7, .col-md-offset-8, .col-md-offset-9, .col-md-offset-10, .col-md-offset-11, .col-md-offset-12': 
@@ -587,7 +592,7 @@ const styles = (settings) => {
 
 			container: {
 
-				width: `${lg - gutterWidth}`,
+				width: `${lg - gutterWidth}px`,
     		maxWidth: '100%',
 
 				'& .col-lg, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-offset-0, .col-lg-offset-1, .col-lg-offset-2, .col-lg-offset-3, .col-lg-offset-4, .col-lg-offset-5, .col-lg-offset-6, .col-lg-offset-7, .col-lg-offset-8, .col-lg-offset-9, .col-lg-offset-10, .col-lg-offset-11, .col-lg-offset-12': 
@@ -772,8 +777,12 @@ const styles = (settings) => {
 
 			container: {
 
-				width: `${xl - gutterWidth}`,
+				width: `${xl - gutterWidth}px`,
     		maxWidth: '100%',
+
+    		'& .hidden-xl': {
+					display: 'none'
+				},
 
 				'& .col-xl, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-offset-0, .col-xl-offset-1, .col-xl-offset-2, .col-xl-offset-3, .col-xl-offset-4, .col-xl-offset-5, .col-xl-offset-6, .col-xl-offset-7, .col-xl-offset-8, .col-xl-offset-9, .col-xl-offset-10, .col-xl-offset-11, .col-xl-offset-12': 
 				{
@@ -988,18 +997,10 @@ const styles = (settings) => {
 			}
 		},
 
-		// xl Only 
-		[`@media only screen and (min-width: ${xl}px)`]: {
-			container: {
-				'& .hidden-lg': {
-					display: 'none'
-				}
-			}
-		},
-
+		// xl only is the same as lg viewport
 	})
 }
 
-const grid = (settings) => jss.createStyleSheet(styles(settings)).attach()
+const grid = (settings) => jss.createStyleSheet(styles(settings)).attach().classes
 
 export default grid
