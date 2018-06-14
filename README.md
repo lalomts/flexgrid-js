@@ -126,7 +126,7 @@ The attributes and possible values for each element of the grid:
 
 | Attribute | Description | Values | Example |
 | --- | --- | --- | --- |
-| **align** | How the elements should be aligned inside a row for a specific viewport size | Array: start, center, end, top, bottom, middle | `align: {xs: ['bottom', 'center', xl: 'start'}`|
+| **align** | How the elements should be aligned inside a row for a specific viewport size | Array: start, center, end, top, bottom, middle | `align: {xs: ['bottom', 'center', xl: ['start']}`|
 | **dist** | How the elements should be distributed inside a row for a specific viewport size | around, between| `dist: { xs: 'around' }`|
 | **reverse** | Reverse the order of the elements inside a row | Bool | `reverse: true `|
 </details> 
