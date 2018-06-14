@@ -1,4 +1,5 @@
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const PATHS = {
   app: path.join(__dirname, 'src'),
@@ -8,9 +9,12 @@ const PATHS = {
   }
 }
 
-process.env.BABEL_ENV = process.env.npm_lifecycle_event
+var ENV = process.env.NODE_ENV
 
-module.exports = {
+
+// process.env.BABEL_ENV = process.env.npm_lifecycle_event
+
+let config = {
   entry: './src/index.js',
   resolve: {
       modules: [PATHS.app, 'node_modules'],
@@ -41,4 +45,12 @@ module.exports = {
       },
     ],
   },
-};
+  plugins: []
+}
+
+if (ENV === 'production') {
+  config.plugins.push(new UglifyJsPlugin())
+  console.log('onProduction')
+}
+
+module.exports = config 
