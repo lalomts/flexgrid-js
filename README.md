@@ -8,12 +8,12 @@
 `flexgrid-js` is available as an [npm package](https://www.npmjs.com/package/flexgrid-js)
 #### npm 
 ```
-npm install flexgrid-js 
+npm install @lalomts/flexgrid-js
 ````
 
 #### yarn 
 ````
-yarn add flexgrid-js 
+yarn add @lalomts/flexgrid-js
 ````
 
 
@@ -69,7 +69,7 @@ const colConfig = {
 
 ### A complete example
 ```jsx 
-import FlexGrid from 'flexgrid-js'
+import FlexGrid from '@lalomts/flexgrid-js'
 
 class Home extends Component {
   render() {

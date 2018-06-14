@@ -1,7 +1,8 @@
 {
-  "name": "flexgrid-js",
+  "name": "@lalomts/flexgrid-js",
   "version": "1.0.0",
-  "description": "Flexbox grid for react.",
+  "description": "A customizable 12 column flexbox grid, built with jss",
+  "keywords": ["flexgrid", "cssinjs", "jss", "react", "grid"],
   "main": "lib/index.js",
   "author": "Lalo Mrtnz (https://twitter.com/lalomts)",
   "homepage": "https://github.com/LaloMrtnz/flexgrid-js",

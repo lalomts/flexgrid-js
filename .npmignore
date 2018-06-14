@@ -4,4 +4,4 @@ yarn\.lock
 
 /src 
 
-webpack\.config\.js
+webpack.config.js
