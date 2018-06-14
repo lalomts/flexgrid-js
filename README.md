@@ -126,7 +126,7 @@ The attributes and possible values for each element of the grid:
 
 | Attribute | Description | Values | Example |
 | --- | --- | --- | --- |
-| **align** | How the elements should be aligned inside a row for a specific viewport size | start, center, end | `align: {xs: 'center', xl: 'start'}`|
+| **align** | How the elements should be aligned inside a row for a specific viewport size | Array: start, center, end, top, bottom, middle | `align: {xs: ['bottom', 'center', xl: 'start'}`|
 | **dist** | How the elements should be distributed inside a row for a specific viewport size | around, between| `dist: { xs: 'around' }`|
 | **reverse** | Reverse the order of the elements inside a row | Bool | `reverse: true `|
 </details> 
@@ -141,7 +141,6 @@ The attributes and possible values for each element of the grid:
 | --- | --- | --- | --- |
 | **size** | How many of the grid columns should be used at a specific viewport size| Number: 1-12 | `size: {sm: 6, xl: 8} `|
 | **offset** | The offset of a column at a specific viewport size| Number: 1-11 | `offset: {sm: 2, xl: 4} `|
-| **align** | How the elements should be aligned inside a row for a specific viewport size | start, center, end | `align: {xs: 'center', xl: 'start'}`|
 | **reorder** | Forces a column to appear at a different order for a specific viewport size| first, last, initialOrder | `reorder: {sm: 'first', xl: 'initialOrder' } `|
 | **hidden** | Hides a column at a specific viewport size | Bool | `hidden: true `|
 | **reverse** | Reverse the order of the elements inside a column | Bool | `reverse: true `|
