@@ -146,5 +146,5 @@ The attributes and possible values for each element of the grid:
 | **reverse** | Reverse the order of the elements inside a column | Bool | `reverse: true `|
 </details> 
 
-## Licence 
-[MIT](LICENCE.md)
+## License 
+[MIT](LICENSE.md)
